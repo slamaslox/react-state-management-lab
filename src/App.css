@@ -1,13 +1,9 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
 ul {
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-start;
+  padding-left: 0; 
+
 }
 
 li {
@@ -18,15 +14,6 @@ li {
   border-radius: 8px;
 }
 
-.message {
-  font-weight: bold;
-  margin-bottom: 1rem;
-}
-
-.message.success {
-  color: green;
-}
-
-.message.error {
-  color: red;
+li button {
+  width: 100%;
 }

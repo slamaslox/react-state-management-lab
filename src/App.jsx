@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Message from "./components/Message";
 import "./App.css";
 
 const allZombies = [
@@ -98,7 +99,7 @@ function App() {
   const showMessage = (text, type = "success") => {
     setMessage(text);
     setMessageType(type);
-    setTimeout(() => setMessage(""), 3000);
+    setTimeout(() => setMessage(""), 3500);
   };
 
   const handleAddFighter = (fighter) => {
@@ -149,11 +150,9 @@ function App() {
 
   return (
     <>
+      {message && <Message type={messageType} text={message} />}
       <div>
         <h1>Zombie Figthers</h1>
-        {message && ( // Only render the <p> if message exists
-          <p className={`message ${messageType}`}>{message}</p>
-        )}
       </div>
       <div>
         <p>Money: ${money}</p>
@@ -181,7 +180,7 @@ function App() {
           </ul>
         )}
       </div>
-      <div className="card">
+      <div>
         <h2>Zombies</h2>
         <ul>
           {zombieFighters.map((zombie) => (
